@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
     <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" >
     <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
-    <link rel="stylesheet" href="css/style-switcher.css">    
+    <link rel="stylesheet" href="css/style-switcher.css">
+
 </head>
 <body>
     <!-- ===== Main Container Start ===== -->
@@ -529,7 +530,7 @@
                     <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
                     <!-- ===== Contact Form ===== -->
                     <div class="row">
-                        <form class="contact-form padd-15" action="#" method="post" enctype="text/plain">
+                        <form class="contact-form padd-15" action="#" method="post" enctype="text/plain" id="form">
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group field">
@@ -562,14 +563,22 @@
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group field">
                                         <textarea name="" class="form-control" placeholder="Your Message" id="message" autocomplete="off"></textarea>
-                                        <div class="error-txt" padd-15>Message can't be blank</div>
+                                        <div class="error-txt">Message can't be blank</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-item col-12 padd-15">
+                                    <div class="form-group field">
+                                        <div class="form-control-captcha g-recaptcha" id="captcha"></div>
+                                        <div class="error-txt captcha">Complete the captcha</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item padd-15">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn" values="Send">Send Message</button>
+                                    <div class="form-group ">
+                                        <button type="submit" class="btn padd-15" values="Send">Send Message</button>
                                     </div>
                                 </div>
                             </div>
@@ -608,5 +617,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+    </script>
+
 </body>
 </html>

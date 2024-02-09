@@ -98,6 +98,7 @@ const phone = document.getElementById("phone");
 const subject = document.getElementById("subject");
 const email = document.getElementById("email");
 const mess = document.getElementById("message");
+const captch = document.getElementById("captcha");
 
 function sendEmail(){
 const bodyMessage = `Full Name: ${fullName.value}<br> Phone Number: ${phone.value}<br> Email: ${email.value}<br> Message: ${mess.value}`;
@@ -123,6 +124,15 @@ const bodyMessage = `Full Name: ${fullName.value}<br> Phone Number: ${phone.valu
 
 function checkInputs(){
     const items = document.querySelectorAll(".form-control");
+    const captchaResponse = grecaptcha.getResponse();
+
+    if(!captchaResponse.length > 0){
+        const errorTxtCaptcha = document.querySelector(".error-txt.captcha");
+
+        errorTxtCaptcha.innerText = "Complete the Captcha";
+        captch.classList.add("error");
+        captch.parentElement.classList.add("error");
+    }
 
     for (const item of items){
         if(item.value == ""){
@@ -174,13 +184,55 @@ function checkEmail(){
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+
     checkInputs();
 
-    if (!fullName.classList.contains("error")  && !phone.classList.contains("error") && !subject.classList.contains("error") && !email.classList.contains("error") && !mess.classList.contains("error")){
+    const captchaResponse = grecaptcha.getResponse();
+
+    if (!fullName.classList.contains("error")  && !phone.classList.contains("error") && !subject.classList.contains("error") && !email.classList.contains("error") && !mess.classList.contains("error") && !captch.classList.contains("error")){
         sendEmail();
 
+
         form.reset();
+        grecaptcha.reset();
         return false;
     }
 
 })
+
+function reCaptchaVerify(response) {
+    if (response === document.querySelector('.g-recaptcha-response').value) {
+        /* do something */
+        if (!response.length > 0) {
+            const errorTxtCaptcha = document.querySelector(".error-txt.captcha");
+
+            errorTxtCaptcha.innerText = "Sorry robot";
+            captch.classList.add("error");
+            captch.parentElement.classList.add("error");
+    
+        }
+        else {
+            captch.classList.remove("error");
+            captch.parentElement.classList.remove("error");
+        }
+
+    }
+    }
+
+    function reCaptchaExpired () {
+        /* do something when it expires */
+        const errorTxtCaptcha = document.querySelector(".error-txt.captcha");
+
+        captch.classList.add("error")
+        captch.parentElement.classList.add("error");
+
+        errorTxtCaptcha.innerText = "Captcha was expired";
+    }
+
+    var onloadCallback = function() {
+        grecaptcha.render('captcha', {
+        'sitekey' : '6Ld-k20pAAAAAHofJ8EMq405_TVEmhq3PRcsJ0pL',
+        'callback': reCaptchaVerify,
+        'expired-callback': reCaptchaExpired
+    });
+};

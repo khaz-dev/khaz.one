@@ -150,6 +150,7 @@ ul{
     background: var(--skin-color);
     transition: all 0.3s ease;
     margin-right: 10px;
+    margin-top: 10px;
 }
 .btn:hover
 {
@@ -830,7 +831,7 @@ h3.my-profession
 }
 .contact .contact-form .form-item
 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .contact .contact-form .form-item .form-control
 {
