@@ -53,9 +53,9 @@
                             <h3 class="hello">Hello, my name is <span class="name">Khairil Azmi Ashari</span></h3>
                             <h3 class="my-profession">I'm a <span class="typing">Data Enthusiast</span></h3>
                             <p>I'm a Data Enthusiast with extensive knowledge. My expertise is among Data Science, Data Engineer, Deep Learning and Development, and many more ...</p>
-                            <a href="https://linkedin.com/in/khairilazmiashari" class="btn" target="_blank">Linkedin</a>
-                            <a href="https://github.com/KhaAzAs" class="btn" target="_blank">Github</a>
-                            <a href="cv/cv.pdf" class="btn" target="_blank">Download CV</a>
+                            <button href="https://linkedin.com/in/khairilazmiashari" class="btn" target="_blank">Linkedin</button>
+                            <button href="https://github.com/KhaAzAs" class="btn" target="_blank">Github</button>
+                            <button href="cv/cv.pdf" class="btn" target="_blank">Download CV</button>
                         </div>
                         <div class="home-img padd-15">
                             <img src="images/hero-at.png" alt="">
@@ -529,42 +529,47 @@
                     <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
                     <!-- ===== Contact Form ===== -->
                     <div class="row">
-                        <form class="contact-form padd-15" action="mailto:khairilazmiashari@gmail.com" method="post" enctype="text/plain">
+                        <form class="contact-form padd-15" action="#" method="post" enctype="text/plain">
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name" id="name" name="name" required>
+                                    <div class="form-group field">
+                                        <input type="text" class="form-control" placeholder="Full Name" id="name" name="name" autocomplete="off">
+                                        <div class="error-txt padd-15">Full Name can't be blank</div>
                                     </div>
                                 </div>
                                 <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email" id="email" name="email" required>
+                                    <div class="form-group field">
+                                        <input type="text" class="form-control" placeholder="Phone Number" id="phone" name="phone" autocomplete="off">
+                                        <div class="error-txt padd-15">Phone Number can't be blank</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-item col-6 padd-15">
+                                    <div class="form-group field">
+                                        <input type="text" class="form-control" placeholder="Subject" id="subject" name="subject" autocomplete="off">
+                                        <div class="error-txt padd-15">Subject can't be blank</div>
+                                    </div>
+                                </div>
+                                <div class="form-item  col-6 padd-15">
+                                    <div class="form-group field">
+                                        <input type="text" class="form-control" placeholder="Email Address" id="email" name="email" autocomplete="off">
+                                        <div class="error-txt email padd-15">Email Address can't be blank</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Subject" id="subject" name="subject" required>
+                                    <div class="form-group field">
+                                        <textarea name="" class="form-control" placeholder="Your Message" id="message" autocomplete="off"></textarea>
+                                        <div class="error-txt" padd-15>Message can't be blank</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="form-item col-12 padd-15">
+                                <div class="form-item padd-15">
                                     <div class="form-group">
-                                        <textarea name="" class="form-control" id="" placeholder="Message" id="message" name="message" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-item col-3 padd-15">
-                                    <div class="form-group">
-                                        <input type="submit" class="btn" values="Send">
-                                    </div>
-                                </div>
-                                <div class="form-item col-3 padd-15">
-                                    <div class="form-group">
-                                        <input type="reset" class="btn" values="Reset">
+                                        <button type="submit" class="btn" values="Send">Send Message</button>
                                     </div>
                                 </div>
                             </div>
@@ -598,6 +603,8 @@
     </div>
     <!-- ===== Style Switcher End ===== -->
     <!-- ===== JS Files ===== -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>

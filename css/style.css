@@ -22,6 +22,7 @@ body
     font-size: 16px;
     font-family: 'Poppins';
 }
+
 *
 {
     margin: 0;
@@ -148,6 +149,7 @@ ul{
     border:  none;
     background: var(--skin-color);
     transition: all 0.3s ease;
+    margin-right: 10px;
 }
 .btn:hover
 {
@@ -602,7 +604,7 @@ h3.my-profession
 {
     padding-bottom: 40px;
 }
-.certificates .certrificates-heading
+.certificates .certificates-heading
 {
     flex: 0 0 100%;
     max-width: 100%;
@@ -815,6 +817,7 @@ h3.my-profession
     flex: 0 0 100%;
     max-width: 100%;
 }
+
 .contact .contact-form .col-6
 {
     flex:  0 0 50%;
@@ -827,7 +830,7 @@ h3.my-profession
 }
 .contact .contact-form .form-item
 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .contact .contact-form .form-item .form-control
 {
@@ -840,6 +843,7 @@ h3.my-profession
     font-size: 16px;
     color: var(--text-black-700);
     transition: all 0.3s ease;
+    font-family: 'Poppins';
 }
 .contact .contact-form .form-item .form-control:focus
 {
@@ -848,12 +852,37 @@ h3.my-profession
 .contact .contact-form .form-item textarea.form-control
 {
     height: 140px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: var(--text-black-700);
 }
 .contact .contact-form .btn
 {
     height: 50px;
     padding: 0 50px;
 }
+
+.field .form-control{
+    color: rgba(255, 255, 255, .3);
+}
+
+.error-txt {
+    padding-left: 25px;
+    padding-top: 8px;
+}
+
+.field .error-txt {
+    font-size: 14.5px;
+    color: #d93025;
+    text-align: left;
+    margin: -5px 0 0px;
+    display: none;
+}
+
+.field.error .error-txt {
+    display: block;
+}
+
 @media (max-width:1199px)
 {
     .section .container
