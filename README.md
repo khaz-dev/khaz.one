@@ -1,7 +1,7 @@
 <h1>Khaz.one</h1>
 My Personal Portfolio Website
 
-Heres is some of the preview ...
+Heres is some of the website preview ...
 
 <p align="center">
   <img src="web-preview/web-preview-1.png"/>
